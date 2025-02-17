@@ -1,0 +1,158 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7; /* Light background */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    overflow: hidden;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    background: linear-gradient(135deg, #0b26d9, #00c6ff); /*Dark background */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+
+.container:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-8px); 
+}
+
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+
+h1:hover {
+    transform: translateY(-5px); 
+}
+
+/* for input searching */
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 2px solid #ccc;
+    border-radius: 50px; 
+    font-size: 18px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+input:focus {
+    border-color: #42aaff; 
+    box-shadow: 0 0 12px rgba(66, 170, 255, 0.6); 
+    transform: scale(1.02);
+}
+
+/* Suggestions list  */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 15px;
+    transition: opacity 0.3s ease;
+}
+
+li {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: rgba(115, 202, 103, 0.9); 
+    color: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+li:hover {
+    background-color: #42aaff; 
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(66, 170, 255, 0.2); 
+}
+
+li:focus {
+    background-color: #42aaff;
+    color: white;
+}
+
+li {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input::placeholder {
+    color: #888;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.container:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+}
+
+ul {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    input {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    li {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
